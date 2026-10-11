@@ -39,3 +39,217 @@ button:focus-visible{outline:3px solid #b67d8f;outline-offset:3px}
 @media (min-width:721px){.album-shell{padding:8px 20px 14px;gap:7px}.controls{gap:8px}.arrows{width:350px}.site-header h1{font-size:33px}}
 @media (max-width:720px){.album-shell{padding:4px 9px 9px;gap:3px}.studio{font-size:9px}.site-header h1{font-size:26px;line-height:1.12;margin:1px 0}.edition{font-size:9px}.controls{gap:5px}.arrows{width:100%;gap:9px}.music-button{min-height:40px;padding:8px 15px}.turn-button{min-height:41px}.cover-content{padding:14px;gap:10px}.cover-content h2{font-size:clamp(27px,8.1vw,40px)}.cover-photo{max-height:66%}.photo-content{padding:10px;gap:9px}}
 @media (max-height:660px){.album-shell{padding-top:2px;padding-bottom:4px}.site-header h1{font-size:22px}.edition{display:none}.controls{gap:3px}.turn-button{min-height:38px;padding:7px}.music-button{min-height:38px;padding:7px}.counter{font-size:12px}}
+
+/* ========================================
+   BABYKIDS STUDIO - MAYERLI TOBAR
+   FONDO ELEGANTE ROSA Y CREMA
+======================================== */
+
+html, body {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(221, 180, 190, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(195, 205, 181, 0.30),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #fffaf6 0%,
+            #f5e6e9 50%,
+            #eee5df 100%
+        ) !important;
+}
+
+/* =========================================
+   MAYERLI TOBAR
+   CORRECCION DE BOTONES EN COMPUTADORA
+========================================= */
+
+@media (min-width: 721px) {
+
+    /* Mantener el libro debajo de los controles */
+    .book-stage {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Colocar los controles por encima */
+    .controls {
+        position: relative !important;
+        z-index: 100 !important;
+        pointer-events: auto !important;
+    }
+
+    /* Permitir clics en los botones */
+    .controls button {
+        position: relative;
+        z-index: 101;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+    }
+
+}
+
+/* ========================================
+   BABYKIDS STUDIO - MAYERLI TOBAR
+   PORTADA Y FOTOGRAFIAS PREMIUM
+======================================== */
+
+/* Portada elegante en tonos rosa y marfil */
+
+.cover,
+.back-cover {
+    background: linear-gradient(
+        155deg,
+        #fffdfb 0%,
+        #f7e8ec 50%,
+        #fdf5ee 100%
+    );
+
+    border: 2px solid #d4abb8;
+
+    box-shadow:
+        inset 0 0 0 8px #fffaf7,
+        inset 0 0 0 9px #e2c3ca;
+}
+
+/* Nombre principal de la portada */
+
+.cover .cover-content h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    color: #8f526b;
+    font-weight: 600;
+    font-size: clamp(28px, 6vw, 43px);
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+/* Nombre del estudio */
+
+.cover .cover-studio {
+    color: #b58b6b;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+}
+
+/* Fotografia de portada */
+
+.cover .cover-photo img {
+    object-fit: contain;
+    border: 5px solid #ffffff;
+
+    box-shadow:
+        0 8px 22px rgba(110, 63, 82, 0.18),
+        0 0 0 1px #e6cdd3;
+}
+
+/* Fondo del papel interior */
+
+/* Página interior del álbum */
+.photo-page {
+    background: linear-gradient(180deg, #fffdfb 0%, #f8f0f2 100%);
+}
+
+/* Recuadro elegante de cada fotografía */
+.photo-page .photo-slot {
+    position: relative;
+    background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.95), rgba(255,255,255,0.65) 45%, rgba(244,228,232,0.85) 100%),
+        linear-gradient(135deg, #fffaf8 0%, #f4e5e9 55%, #efe2dc 100%);
+    padding: 10px;
+    border: 1px solid #dfc3cb;
+    border-radius: 14px;
+    box-shadow:
+        0 10px 24px rgba(123, 86, 101, 0.14),
+        inset 0 0 0 1px rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Borde interior decorativo */
+.photo-page .photo-slot::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(201, 170, 150, 0.45);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+/* Imagen */
+.photo-page .photo-slot img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    background: transparent;
+}
+
+/* ========================================
+   MAYERLI TOBAR
+   ESTILO C - BEIGE CALIDO PREMIUM
+======================================== */
+
+/* Fondo elegante de las paginas interiores */
+
+.photo-page {
+    background: linear-gradient(
+        160deg,
+        #fffaf4 0%,
+        #f4e8db 55%,
+        #ecddd0 100%
+    ) !important;
+}
+
+/* Marcos de las fotografias */
+
+.photo-page .photo-slot {
+    position: relative;
+
+    background: linear-gradient(
+        145deg,
+        #fff9f2 0%,
+        #e5d1bb 100%
+    ) !important;
+
+    padding: 8px;
+    border: 1px solid #d1b59a;
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 20px rgba(104, 75, 56, 0.15),
+        inset 0 0 0 1px #fffaf5;
+}
+
+/* Fotografia completa, sin recortes */
+
+.photo-page .photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Borde decorativo muy delicado */
+
+.photo-page .photo-slot::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(183, 150, 122, 0.35);
+    border-radius: 7px;
+    pointer-events: none;
+}
+

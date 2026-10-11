@@ -38,6 +38,108 @@
   }
   album.on('flip', updateCounter);
   album.on('changeOrientation', updateCounter);
+  
+/* =========================================
+   BABYKIDS STUDIO - MAYERLI TOBAR
+   SONIDO REALISTA AL PASAR LAS HOJAS
+========================================= */
+
+let audioHojas = null;
+let ultimoSonidoHoja = 0;
+
+// Activar el audio cuando el usuario interactua
+function activarAudioHojas() {
+    const AudioAPI =
+        window.AudioContext || window.webkitAudioContext;
+
+    if (!AudioAPI) return;
+
+    if (!audioHojas) {
+        audioHojas = new AudioAPI();
+    }
+
+    if (audioHojas.state === 'suspended') {
+        audioHojas.resume().catch(() => {});
+    }
+}
+
+// Permitir sonido con mouse y con el dedo
+[book, prev, next].forEach(elemento => {
+    elemento.addEventListener(
+        'pointerdown',
+        activarAudioHojas,
+        { passive: true }
+    );
+});
+
+// Permitir sonido al usar las flechas del teclado
+document.addEventListener('keydown', evento => {
+    if (
+        evento.key === 'ArrowRight' ||
+        evento.key === 'ArrowLeft'
+    ) {
+        activarAudioHojas();
+    }
+});
+
+// Crear un sonido suave de papel
+function sonidoPasarHoja() {
+
+    if (!audioHojas || audioHojas.state !== 'running') {
+        return;
+    }
+
+    const ahora = performance.now();
+
+    if (ahora - ultimoSonidoHoja < 350) return;
+
+    ultimoSonidoHoja = ahora;
+
+    const duracion = 0.42;
+    const cantidad = Math.floor(
+        audioHojas.sampleRate * duracion
+    );
+
+    const buffer = audioHojas.createBuffer(
+        1,
+        cantidad,
+        audioHojas.sampleRate
+    );
+
+    const datos = buffer.getChannelData(0);
+
+    for (let i = 0; i < cantidad; i++) {
+        const progreso = i / cantidad;
+        const suavizado = Math.pow(
+            Math.sin(Math.PI * progreso),
+            1.3
+        );
+
+        datos[i] =
+            (Math.random() * 2 - 1) * suavizado;
+    }
+
+    const fuente = audioHojas.createBufferSource();
+    fuente.buffer = buffer;
+
+    const filtro = audioHojas.createBiquadFilter();
+    filtro.type = 'bandpass';
+    filtro.frequency.value = 1500;
+    filtro.Q.value = 0.6;
+
+    const volumen = audioHojas.createGain();
+    volumen.gain.value = 0.09;
+
+    fuente.connect(filtro);
+    filtro.connect(volumen);
+    volumen.connect(audioHojas.destination);
+
+    fuente.start();
+}
+
+// Reproducir al cambiar de pagina
+album.on('flip', sonidoPasarHoja);
+
   next.addEventListener('click', () => album.flipNext('bottom'));
   prev.addEventListener('click', () => album.flipPrev('bottom'));
   document.addEventListener('keydown', e => {
