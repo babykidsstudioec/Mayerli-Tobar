@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1ee">
+  <title>MAYERLI TOBAR | BabyKids Studio</title>
+  <meta name="description" content="Mayerli Tobar · Álbum fotográfico digital de cinco páginas.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MAYERLI TOBAR">
+  <meta property="og:description" content="Un álbum fotográfico digital de BabyKids Studio.">
+  <meta property="og:image" content="https://babykidsstudioec.github.io/mayerli-tobar/assets/img/portada.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="857">
+  <meta property="og:url" content="https://babykidsstudioec.github.io/mayerli-tobar/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="album-shell">
+    <header class="site-header">
+      <span class="studio">BABYKIDS STUDIO</span>
+      <h1>Mayerli Tobar</h1>
+      <span class="edition">ÁLBUM FOTOGRÁFICO</span>
+    </header>
+
+    <section class="book-stage" aria-label="Libro fotográfico digital">
+      <div id="book">
+        <div class="page cover" data-density="hard">
+          <div class="page-content cover-content">
+            <span class="cover-studio">BABYKIDS STUDIO</span>
+            <h2>Mayerli Tobar</h2>
+            <div class="cover-photo"><img src="assets/img/portada.webp" alt="Mayerli junto al número dos" fetchpriority="high"></div>
+          </div>
+        </div>
+        <div class="page photo-page">
+          <div class="page-content photo-content">
+            <figure class="photo-slot"><img src="assets/img/foto-01.webp" alt="Fotografía 1 del álbum Mayerli Tobar" loading="eager"></figure>
+            <figure class="photo-slot"><img src="assets/img/foto-02.webp" alt="Fotografía 2 del álbum Mayerli Tobar" loading="eager"></figure>
+          </div>
+        </div>
+        <div class="page photo-page">
+          <div class="page-content photo-content">
+            <figure class="photo-slot"><img src="assets/img/foto-03.webp" alt="Fotografía 3 del álbum Mayerli Tobar" loading="eager"></figure>
+            <figure class="photo-slot"><img src="assets/img/foto-04.webp" alt="Fotografía 4 del álbum Mayerli Tobar" loading="eager"></figure>
+          </div>
+        </div>
+        <div class="page photo-page">
+          <div class="page-content photo-content">
+            <figure class="photo-slot"><img src="assets/img/foto-05.webp" alt="Fotografía 5 del álbum Mayerli Tobar" loading="eager"></figure>
+            <figure class="photo-slot"><img src="assets/img/foto-06.webp" alt="Fotografía 6 del álbum Mayerli Tobar" loading="eager"></figure>
+          </div>
+        </div>
+        <div class="page photo-page">
+          <div class="page-content photo-content">
+            <figure class="photo-slot"><img src="assets/img/foto-07.webp" alt="Fotografía 7 del álbum Mayerli Tobar" loading="eager"></figure>
+            <figure class="photo-slot"><img src="assets/img/foto-08.webp" alt="Fotografía 8 del álbum Mayerli Tobar" loading="eager"></figure>
+          </div>
+        </div>
+        <div class="page photo-page">
+          <div class="page-content photo-content">
+            <figure class="photo-slot"><img src="assets/img/foto-09.webp" alt="Fotografía 9 del álbum Mayerli Tobar" loading="eager"></figure>
+            <figure class="photo-slot"><img src="assets/img/foto-10.webp" alt="Fotografía 10 del álbum Mayerli Tobar" loading="eager"></figure>
+          </div>
+        </div>
+        <div class="page back-cover" data-density="hard">
+          <div class="page-content back-content">
+            <span class="cover-studio">BABYKIDS STUDIO</span>
+            <h2>Mayerli Tobar</h2>
+            <span class="end-rule" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="controls" aria-label="Controles del álbum">
+      <output id="counter" class="counter" aria-live="polite">Portada</output>
+      <div class="arrows">
+        <button id="prev" class="turn-button" type="button" disabled>← Anterior</button>
+        <button id="next" class="turn-button" type="button">Siguiente →</button>
+      </div>
+      <button id="music" class="music-button" type="button" aria-pressed="false">♫ Música: activar</button>
+    </nav>
+    <audio id="soundtrack" src="assets/audio/melodia-suave.mp3" preload="none" loop></audio>
+    <p id="load-error" class="error-message" role="alert" hidden>No se pudo cargar el efecto de las hojas. Comprueba tu conexión a Internet y vuelve a intentarlo.</p>
+  </main>
+</body>
+</html>

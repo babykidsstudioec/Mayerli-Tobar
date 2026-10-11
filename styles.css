@@ -1,0 +1,41 @@
+/* MAYERLI TOBAR · Un álbum independiente de BabyKids Studio */
+:root {color-scheme:light;--rose:#a76d82;--ink:#513942;--gold:#b79687;--paper:#fffefa;}
+* {box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#f8f5f2;color:var(--ink)}
+body{font-family:"DM Sans",Arial,sans-serif;overflow-x:hidden}
+.album-shell{width:min(100%,1140px);height:100dvh;min-height:480px;margin:0 auto;display:flex;flex-direction:column;padding:8px 12px 12px;gap:6px}
+.site-header{text-align:center;flex:0 0 auto;display:flex;align-items:center;flex-direction:column;gap:1px}
+.studio,.edition{font-size:10px;letter-spacing:.25em;font-weight:600;color:#997783}
+.site-header h1{font-family:"Playfair Display",Georgia,serif;color:#8f6072;font-size:clamp(24px,3vw,32px);font-weight:500;line-height:1.15;margin:2px 0}
+.edition{font-size:9px;letter-spacing:.22em}
+.book-stage{position:relative;flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;isolation:isolate;width:100%}
+#book{width:100%;height:100%;margin:0 auto}
+.page{background:var(--paper);border:1px solid #e9ddd4;overflow:hidden;box-shadow:inset 4px 0 9px rgba(81,46,55,.035)}
+.page-content{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+/* Portada sin letras encima de la fotografía */
+.cover,.back-cover{background:#fffaf7;border:2px solid #cfb8ae;box-shadow:inset 0 0 0 9px #fffaf7,inset 0 0 0 10px #e6d6d0}
+.cover-content{padding:clamp(18px,4%,28px);gap:clamp(11px,2.2vh,17px)}
+.cover-studio{font-size:clamp(9px,1vw,12px);font-weight:600;letter-spacing:.26em;color:#a17a80}
+.cover-content h2,.back-content h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;color:#88596b;font-size:clamp(29px,6.7vw,43px);line-height:1.08;text-align:center;margin:0}
+.cover-photo{width:100%;max-height:67%;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cover-photo img{display:block;max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;border:5px solid white;box-shadow:0 1px 12px rgba(67,40,43,.13)}
+/* Interior: SOLO 2 fotografías, ni títulos ni frases */
+.photo-content{padding:clamp(10px,2%,18px);gap:clamp(10px,1.6vh,16px);justify-content:space-evenly}
+.photo-slot{margin:0;min-height:0;flex:1 1 0;width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:white;box-shadow:0 1px 8px rgba(65,41,47,.08);border:1px solid #eee7e3}
+.photo-slot img{display:block;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none}
+.back-content{gap:20px;padding:25px}
+.end-rule{width:38%;height:1px;background:#cba4ad}
+.controls{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:7px;width:100%;margin:0 auto}
+.counter{color:#886b74;font-size:13px;font-weight:600;line-height:18px;text-align:center;min-height:18px}
+.arrows{width:min(100%,420px);display:grid;grid-template-columns:1fr 1fr;gap:10px}
+button{font-family:inherit;cursor:pointer;touch-action:manipulation}
+.turn-button{background:#c391a2;color:#fff;border:1px solid #bc8699;border-radius:999px;font-weight:600;min-height:43px;padding:10px;font-size:13px}
+.turn-button:disabled{opacity:.34;cursor:default}
+.turn-button:active:not(:disabled){filter:brightness(.92)}
+.music-button{min-width:160px;max-width:230px;border:1px solid #b99a9f;background:white;color:#865b6a;border-radius:999px;padding:9px 17px;min-height:42px;font-size:12px;font-weight:600}
+.music-button[aria-pressed="true"]{background:#e7d4dc}
+button:focus-visible{outline:3px solid #b67d8f;outline-offset:3px}
+.error-message{text-align:center;color:#9c2545;margin:0;font-size:12px}
+@media (min-width:721px){.album-shell{padding:8px 20px 14px;gap:7px}.controls{gap:8px}.arrows{width:350px}.site-header h1{font-size:33px}}
+@media (max-width:720px){.album-shell{padding:4px 9px 9px;gap:3px}.studio{font-size:9px}.site-header h1{font-size:26px;line-height:1.12;margin:1px 0}.edition{font-size:9px}.controls{gap:5px}.arrows{width:100%;gap:9px}.music-button{min-height:40px;padding:8px 15px}.turn-button{min-height:41px}.cover-content{padding:14px;gap:10px}.cover-content h2{font-size:clamp(27px,8.1vw,40px)}.cover-photo{max-height:66%}.photo-content{padding:10px;gap:9px}}
+@media (max-height:660px){.album-shell{padding-top:2px;padding-bottom:4px}.site-header h1{font-size:22px}.edition{display:none}.controls{gap:3px}.turn-button{min-height:38px;padding:7px}.music-button{min-height:38px;padding:7px}.counter{font-size:12px}}
